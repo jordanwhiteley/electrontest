@@ -1,6 +1,6 @@
 {
   "name": "electrontest",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "main": "main.js",
   "description": "electron-updater example project",
   "author": "J W",
@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "electron-log": "^4.4.1",
-    "electron-updater": "^4.3.9"
+    "electron-updater": "^4.6.5"
   },
   "build": {
     "publish": [
@@ -29,6 +29,7 @@
     "appId": "com.github.jordanwhiteley.electrontest",
     "afterSign": "./build/notarize.js",
     "mac": {
+      "target": "zip",
       "category": "your.app.category.type"
     },
     "win": {
