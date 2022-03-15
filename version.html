@@ -25,12 +25,9 @@ ipcRenderer.on('message', function(event, text) {
   container.appendChild(message);
 
   // Alert every 5 seconds
-  function func(){
-  console.log("This is where an update would be checked")
-}
-  let timer = window.location.hash.substring(1);
-document.getElementById('timer').innerText = timer;
-setInterval(func,5000)
+  setInterval(function(){ 
+	console.log("Checking for updates in background");
+}, 5000);
 
 
 
