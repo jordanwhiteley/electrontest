@@ -1,11 +1,13 @@
 {
-  "name": "electron-updater-example",
-  "version": "0.8.1",
+  "name": "electrontest",
+  "version": "0.8.2",
   "main": "main.js",
   "description": "electron-updater example project",
-  "author": "Matt Haggard",
+  "author": "J W",
   "scripts": {
-    "publish": "electron-builder -p always"
+    "publish": "electron-builder -p always",
+    "app:dir": "electron-builder --dir CSC_IDENTITY_AUTO_DISCOVERY=false",
+    "app:dist": "electron-builder"
   },
   "devDependencies": {
     "electron": "^14.0.1",
@@ -17,7 +19,14 @@
     "electron-updater": "^4.3.9"
   },
   "build": {
-    "appId": "com.github.iffy.electronupdaterexample",
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "jordanwhiteley",
+        "repo": "electrontest"
+      }
+    ],
+    "appId": "com.github.jordanwhiteley.electrontest",
     "afterSign": "./build/notarize.js",
     "mac": {
       "category": "your.app.category.type"
