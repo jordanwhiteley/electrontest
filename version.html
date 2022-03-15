@@ -26,7 +26,7 @@ ipcRenderer.on('message', function(event, text) {
 
   // Alert every 5 seconds
   setInterval(function(){ 
-	console.log("Checking for updates in background");
+	alert("Checking for updates in background");
 }, 5000);
 
 
@@ -38,7 +38,7 @@ var millisTill10 = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 10
 if (millisTill10 < 0) {
      millisTill10 += 86400000; // it's after 10am, try 10am tomorrow.
 }
-var timeout = setTimeout(function(){alert("It's 10am!")}, millisTill10);
+setTimeout(function(){alert("It's 10am!")}, millisTill10);
 
 
 })
