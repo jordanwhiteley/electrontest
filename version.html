@@ -26,7 +26,8 @@ ipcRenderer.on('message', function(event, text) {
 
   // Alert every 5 seconds
   //setInterval(function(){alert("Checking for updates in background");}, 5000);
-setTimeout(function(){alert("Checking for updates in background")}, 5000);
+  window.onload = setTimeout(function(){alert("Checking for updates in background")}, 5000);
+
 
   // test to display timer for auto update
   var now = new Date();
