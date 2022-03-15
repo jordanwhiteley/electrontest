@@ -1,11 +1,11 @@
 {
   "name": "electrontest",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "main": "main.js",
   "description": "electron-updater example project",
   "author": "J W",
   "scripts": {
-    "publish": "electron-builder -p always",
+    "publish": "electron-builder --mac -p always",
     "app:dir": "electron-builder --dir CSC_IDENTITY_AUTO_DISCOVERY=false",
     "app:dist": "electron-builder"
   },
