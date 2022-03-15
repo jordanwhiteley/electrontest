@@ -28,7 +28,7 @@ ipcRenderer.on('message', function(event, text) {
   function func(){
   console.log("This is where an update would be checked")
 }
-  let timer = setInterval(func,500)
+  let timer = setInterval(func,5000)
 document.getElementById('timer').innerText = timer;
 
 
