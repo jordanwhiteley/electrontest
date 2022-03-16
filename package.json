@@ -1,6 +1,6 @@
 {
   "name": "electrontest",
-  "version": "3.0.5",
+  "version": "3.0.6",
   "main": "main.js",
   "description": "electron-updater example project",
   "author": "J W",

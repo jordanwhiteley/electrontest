@@ -79,14 +79,12 @@ autoUpdater.on('error', (err) => {
   sendStatusToWindow('Error in auto-updater. ' + err);
 })
 autoUpdater.on('download-progress', (progressObj) => {
-  let log_message = "Download speed: " + progressObj.bytesPerSecond;
-  log_message = log_message + ' - Downloaded ' + progressObj.percent + '%';
-  log_message = log_message + ' (' + progressObj.transferred + "/" + progressObj.total + ')';
+  let log_message = 'Downloaded ' + parseInt(progressObj.percent) + '%';
   sendStatusToWindow(log_message);
 })
 autoUpdater.on('update-downloaded', (info) => {
   sendStatusToWindow('Update downloaded');
-  alert('Please restart the app to finish updates');
+  window.alert('Please restart the app to finish updates');
 });
 app.on('ready', function() {
   // Create the Menu
@@ -98,10 +96,6 @@ app.on('ready', function() {
 app.on('window-all-closed', () => {
   app.quit();
 });
-
-//
-// CHOOSE one of the following options for Auto updates
-//
 
 //-------------------------------------------------------------------
 // Auto updates - Option 1 - Simplest version
