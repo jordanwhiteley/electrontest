@@ -86,7 +86,7 @@ autoUpdater.on('download-progress', (progressObj) => {
 })
 autoUpdater.on('update-downloaded', (info) => {
   sendStatusToWindow('Update downloaded');
-  alert('Please restart the app to finish updates')
+  alert('Please restart the app to finish updates');
 });
 app.on('ready', function() {
   // Create the Menu
