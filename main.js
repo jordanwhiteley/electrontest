@@ -1,4 +1,4 @@
-const { app, BrowserWindow, Menu } = require('electron');
+const { app, BrowserWindow, Menu, dialog } = require('electron');
 const log = require('electron-log');
 const { autoUpdater } = require("electron-updater");
 
@@ -84,7 +84,15 @@ autoUpdater.on('download-progress', (progressObj) => {
 })
 autoUpdater.on('update-downloaded', (info) => {
   sendStatusToWindow('Update downloaded');
-  window.alert('Please restart the app to finish updates');
+  const dialogOpts = {
+    type: 'info',
+    buttons: ['Restart', 'Later'],
+    title: 'Application Update',
+    detail: 'A new version has been downloaded. Restart application to apply updates.'
+  }
+  dialog.showMessageBox(dialogOpts).then(({ response }) => {
+    if (response === 0) autoUpdater.quitAndInstall()
+  })
 });
 app.on('ready', function() {
   // Create the Menu
