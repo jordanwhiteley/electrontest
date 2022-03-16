@@ -24,6 +24,10 @@ if (process.platform === 'darwin') {
         role: 'about'
       },
       {
+          label: 'Check for updates',
+          click() { autoUpdater.checkForUpdatesAndNotify(); }
+      },
+      {
         label: 'Quit',
         accelerator: 'Command+Q',
         click() { app.quit(); }
@@ -82,6 +86,7 @@ autoUpdater.on('download-progress', (progressObj) => {
 })
 autoUpdater.on('update-downloaded', (info) => {
   sendStatusToWindow('Update downloaded');
+  alert('Please restart the app to finish updates')
 });
 app.on('ready', function() {
   // Create the Menu

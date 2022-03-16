@@ -3,11 +3,6 @@
 <head>
   <title>Electron Updater Example</title>
 </head>
-<div>
-<body>
-  <span id="timer"></span>
-</body>
-</div>
 <body>
   Current version: <span id="version">vX.Y.Z</span>
   <div id="messages"></div>
@@ -24,20 +19,8 @@ ipcRenderer.on('message', function(event, text) {
   message.innerHTML = text;
   container.appendChild(message);
 
-  // Alert every 5 seconds
-  //setInterval(function(){alert("Checking for updates in background");}, 5000);
-  window.onload = setTimeout(function(){alert("Checking for updates in background")}, 5000);
-
-
-  // test to display timer for auto update
-  var now = new Date();
-var millisTill10 = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 10, 0, 0, 0) - now;
-if (millisTill10 < 0) {
-     millisTill10 += 86400000; // it's after 10am, try 10am tomorrow.
-}
-setTimeout(function(){alert("It's 10am!")}, millisTill10);
-
-
+  // Check for updates every hour 
+  setInterval(function(){alert("Checking for updates in background")}, 3600000);
 })
 </script>
 </body>
